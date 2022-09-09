@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import ProductCard from "./ProductCard";
 import "./tailwind.output.css";
 
 function App() {
@@ -57,23 +58,23 @@ function App() {
           </div>
         </nav>
 
-        <main className="bg-orange-300 p-4">
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
-          <div>Test</div>
+        {/* MAIN */}
+        <main className="bg-orange-300 p-10 w-100 h-100">
+          {/* Product List - Container of cards */}
+          <div className="grid gap-10 h-100 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+
+            <ProductCard></ProductCard>
+            <ProductCard></ProductCard>
+          </div>
         </main>
 
         <footer className="bg-slate-500 p-4">Footer</footer>
