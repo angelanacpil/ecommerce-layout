@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import ProductCard from "./ProductCard";
+import CartModal from "./CartModal";
 import "./tailwind.output.css";
 
 function App() {
@@ -16,13 +17,17 @@ function App() {
 
   return (
     <>
-      <div className="grid text-center grid-rows-[auto 1fr auto] h-screen gap-4">
+      <div
+        id="app-modal"
+        className="grid text-center grid-rows-[auto 1fr auto] h-screen gap-4"
+      >
+        <CartModal></CartModal>
+
         {/* NAV */}
         <nav
-          className={`py-4 bg-sky-500 px-10 
-        flex items-center gap-5 md:py-0 md:gap-16 ${
-          mobileToggle && "flex-wrap"
-        }`}
+          className={`md:grid 
+          py-4 bg-sky-500 px-10 md:gap-1
+        flex items-center gap-5 md:py-2 ${mobileToggle && "flex-wrap"}`}
         >
           <div className="">
             <p>Logo</p>
@@ -69,7 +74,7 @@ function App() {
               search ? "" : "hidden"
             }`}
           >
-            <input className="border-4 w-full" />
+            <input className="border-4 flex-1" />
           </form>
         </nav>
 
