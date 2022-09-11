@@ -6,6 +6,7 @@ import "./tailwind.output.css";
 function App() {
   const [mobileToggle, setMobileToggle] = useState(false);
   const [search, setSearch] = useState(false);
+  const [open, setIsOpen] = useState(false);
 
   const handleMenu = (evt) => {
     setMobileToggle(!mobileToggle);
@@ -15,13 +16,19 @@ function App() {
     setSearch(!search);
   };
 
+  const handleModal = (evt) => {
+    document.body.style.overflow = !open ? "hidden" : "visible";
+    setIsOpen(!open);
+  };
+
   return (
     <>
       <div
         id="app-modal"
         className="grid text-center grid-rows-[auto 1fr auto] h-screen gap-4"
       >
-        <CartModal></CartModal>
+        {/* MODAL */}
+        <CartModal open={open} onClose={handleModal}></CartModal>
 
         {/* NAV */}
         <nav
@@ -60,7 +67,7 @@ function App() {
             {/* HIDDEN */}
             <ul className="md:ml-auto md:flex gap-10">
               <li className="py-2">
-                <button>Cart</button>
+                <button onClick={handleModal}>Cart</button>
               </li>
               <li className="py-2">
                 <button onClick={handleSearch}>Search</button>
