@@ -1,12 +1,15 @@
 import React, { useState } from "react";
-import ProductCard from "./ProductCard";
 import CartModal from "./CartModal";
+import ProductsPage from "./ProductsPage";
+import ProductDetailsPage from "./ProductDetailsPage";
 import "./tailwind.output.css";
 
 function App() {
   const [mobileToggle, setMobileToggle] = useState(false);
   const [search, setSearch] = useState(false);
   const [open, setIsOpen] = useState(false);
+
+  document.body.style.overflowX = "hidden";
 
   const handleMenu = (evt) => {
     setMobileToggle(!mobileToggle);
@@ -17,7 +20,7 @@ function App() {
   };
 
   const handleModal = (evt) => {
-    document.body.style.overflow = !open ? "hidden" : "visible";
+    document.body.style.overflowY = !open ? "hidden" : "visible";
     setIsOpen(!open);
   };
 
@@ -88,20 +91,10 @@ function App() {
         {/* MAIN */}
         <main className="bg-orange-300 p-10">
           {/* Product List - Container of cards */}
-          <div className="grid gap-10 h-100 grid-cols-1 sm:grid-cols-2 md:grid-cols-4">
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
+          {/* <ProductsPage></ProductsPage> */}
 
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-
-            <ProductCard></ProductCard>
-            <ProductCard></ProductCard>
-          </div>
+          {/* Individual Product Details View */}
+          <ProductDetailsPage></ProductDetailsPage>
         </main>
 
         {/* FOOTER */}
