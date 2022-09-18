@@ -12,28 +12,23 @@ const ProductDetailsPage = () => {
   return (
     <>
       <div
-        className="h-auto w-100 flex flex-col align-center justify-center items-center
-      md:items-start md:flex-row py-2 gap-5"
+        className="h-auto flex flex-col align-center justify-center items-center
+      lg:items-start lg:flex-row py-2 gap-4 px-0 lg:px-10"
       >
         {/* Could use clamp for this */}
         <img
-          src={imgSrc3}
-          className="object-cover flex-1 basis-1/2 h-64 w-52"
+          src={imgSrc2}
+          style={{height: "26.5rem" }}
+          className="object-cover border-2 border-gray-800
+          w-full md:w-4/5 lg:w-3/5 xl:w-2/5" 
         />
-        {/* h-48 w-48 max-h-auto max-w-auto */}
-        {/* height="200" width="200" */}
-        {/*  max-h-64 max-w-64 */}
-        {/* min-w-100 min-h-100  */}
-        {/* min-h-[200px] min-w-[200px] */}
-        {/* md:min-w-[10rem] md:min-h-[10rem] md:max-w-sm md:max-h-sm lg:max-w-md lg:max-h-md grow */}
-
         <div
-          className="flex flex-col w-100 h-100 items-center justify-center gap-2 text-center basis-1/4
-          md:justify-start md:items-start md:text-left shrink "
+          className="flex flex-col gap-2 
+          lg:justify-start lg:items-start text-left w-full md:w-4/5 lg:w-3/5 xl:w-2/5"
+          style={{}}
         >
-          <p>Title</p>
-          {/* could use clamp for this */}
-          <p className="">
+          <h1 className="text-xl font-bold">Title</h1>
+          <p className="text-xs">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
             ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
@@ -42,10 +37,17 @@ const ProductDetailsPage = () => {
             pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
             culpa qui officia deserunt mollit anim id est laborum.
           </p>
-          <p className="pt-2">Price</p>
+          <p className="pt-2 text-lg font-bold text-gray-800">P29.00</p>
 
-          <p>Quantity</p>
-          <p>Categories</p>
+          <hr className="w-full h-100 text-black"></hr>
+
+          <form className="relative">
+            <input type="number" name="quantity" className="h-6" />
+            {/* Create separate component for this */}
+            <button className="p-2 absolute bottom-0 left-16">+</button>
+            <button className="p-2 absolute">-</button>
+          </form>
+          <p className="text-gray-700 text-sm">Categories: Cute, Pupper</p>
         </div>
       </div>
     </>
