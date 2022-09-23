@@ -18,7 +18,7 @@
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
-    "extends": "react-app"
+    "extends": "@imaginary-cloud/react"
   },
   "browserslist": {
     "production": [
@@ -33,5 +33,10 @@
     ]
   },
   "keywords": [],
-  "description": ""
+  "description": "",
+  "devDependencies": {
+    "eslint": "^5.16.0",
+    "prettier": "^2.7.1"
+  },
+  "prettier": "@imaginary-cloud/prettier-config"
 }

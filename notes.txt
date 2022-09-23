@@ -1,1 +1,6 @@
 npm run build:tailwind
+yarn start 
+https://tailwindcomponents.com/component/number-input-counter
+
+
+https://www.imaginarycloud.com/blog/how-to-configure-eslint-prettier-in-react/
