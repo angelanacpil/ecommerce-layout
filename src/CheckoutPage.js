@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 const CheckoutPage = () => {
   const dummyData = [
     {
-      name: 'headphones',
+      name: 'headphones 101010',
       price: '20',
       quantity: '1',
       total: '20',
@@ -18,8 +18,8 @@ const CheckoutPage = () => {
 
   return (
     <>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-        <form className="space-y-4 p-4">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+        <form className="space-y-4 md:space-x-4 py-4 col-span-auto md:col-span-2 md:px-20">
           <p className="font-bold">CUSTOMER INFORMATION</p>
 
           <div class="grid gap-6 mb-6 md:grid-cols-2 lg:px-6">
@@ -116,12 +116,10 @@ const CheckoutPage = () => {
 
           {/* Table */}
           {/* Table Theme */}
-          <table className="my-6 row-span-3 ">
+          <table className="my-6 row-span-4 col-span-full">
             <thead>
               <tr>
-                <th>Item</th>
-                <th>Price</th>
-                <th>Quantity</th>
+                <th style={{width: "20rem"}}>3 Items</th>
               </tr>
             </thead>
 
@@ -131,9 +129,8 @@ const CheckoutPage = () => {
                 return (
                   <>
                     <tr>
-                      <td>{item.name}</td>
-                      <td>{item.price}</td>
-                      <td>{item.quantity}</td>
+                      <td>{item.quantity}x &nbsp; {item.name} </td>
+                      <td style={{width: "10rem"}}>{item.price}</td>
                     </tr>
                   </>
                 )
@@ -141,13 +138,16 @@ const CheckoutPage = () => {
             </tbody>
           </table>
 
+          <hr className='' />
+ 
           {/* TOTAL */}
-          <div className="grid grid-cols-4 grid-rows-2 row-span-2">
+          <div className="flex flex-col grid-cols-4 items-center gap-2">
             <div className="flex justify-center col-span-4 gap-10">
-              <p>TOTAL</p>
-              <p>10</p>
+              <p>3 Items</p>
+              <p>Total Price: 10</p>
             </div>
-            <button className="col-start-4 row-start-2 border-2">ORDER</button>
+
+            <button className="my-3 w-32 font-bold border-2 p-2 bg-black text-white rounded">ORDER</button>
           </div>
         </div>
       </div>

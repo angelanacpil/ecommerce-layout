@@ -37,7 +37,7 @@ function App() {
         {/* NAV */}
         <nav
           className={`md:grid 
-          py-4 bg-sky-500 px-10 md:gap-1
+          py-4 px-20 bg-sky-500 px-10 md:gap-1
         flex items-center gap-5 md:py-2 ${mobileToggle && 'flex-wrap'}`}
         >
           <div className="">
@@ -101,7 +101,7 @@ function App() {
         </main>
 
         {/* FOOTER */}
-        <footer className="bg-slate-500 py-4 px-10 flex flex-col md:flex-row gap-5 md:text-left flex-wrap items-center md:items-stretch">
+        <footer className="bg-slate-500 py-6 px-20 flex flex-col md:flex-row gap-5 md:text-left flex-wrap items-center md:items-stretch">
           <div className="flex-1 w-64">
             <p>The Capsule</p>
             <p>subtitle.</p>
