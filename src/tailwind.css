@@ -1,3 +1,16 @@
+/* font */
+@import url('https://fonts.googleapis.com/css2?family=Darker+Grotesque&family=Roboto&display=swap');
+
+@layer base {
+    h1, h2, h3, h4 {
+        @apply font-heading;
+    }
+
+    p, li, a {
+        @apply font-sans; 
+    }
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
